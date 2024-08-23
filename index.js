@@ -17,8 +17,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
 const corsOption={
-    origin:'https://talky-frontend.onrender.com',
-    credentials:true
+    origin:['https://talky-frontend.onrender.com','http://localhost:3000'],
+    credentials:true,
 };
 app.use(cors(corsOption)); 
 
@@ -30,6 +30,6 @@ app.use("/api/v1/message",messageRoute);
 
 server.listen(PORT, ()=>{
     connectDB();
-    console.log(`Server listen at prot ${PORT}`);
+    console.log(`Server listen at port ${PORT}`);
 });
 
