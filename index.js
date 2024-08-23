@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 const corsOption={
     origin:['https://talky-frontend.onrender.com','http://localhost:3000'],
+    methods: ["GET","POST","PUT","DELETE"],
     credentials:true,
 };
 app.use(cors(corsOption)); 
